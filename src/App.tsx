@@ -92,7 +92,7 @@ function App() {
 
   return (
     <div className="App">
-      <h1>🍌🐺的暑假进度</h1>
+      <h1>🍌🐺的CPP进度</h1>
       <div className="progress-bar-container">
         <div
           className="progress-bar-fill"
