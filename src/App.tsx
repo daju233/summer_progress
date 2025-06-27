@@ -103,7 +103,7 @@ function App() {
           <span className='percentage'>{Math.round(percentage)}%</span>
         </span>
       </div>
-      <span>C++ {totalTime}h / 180h</span> {/* 确保空格 */}
+      <span>{totalTime}h / 180h</span> {/* 确保空格 */}
 
       <div className="carousel-container">
         <div className="carousel-slide">
