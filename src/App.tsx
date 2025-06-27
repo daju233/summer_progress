@@ -118,7 +118,6 @@ function App() {
         <span className='span-go'>Go {goTime}/120 h</span>
         </span>
       </div>
-
       <div className="carousel-container">
         <div className="carousel-slide">
           {images.map((image, index) => (
@@ -139,7 +138,12 @@ function App() {
             ></span>
           ))}
         </div>
+      
       </div>
+      <br />
+      <script async src="//finicounter.eu.org/finicounter.js"></script>
+      <span>本站访问人数统计</span>
+      <span id="finicount_views"></span>
     </div>
   );
 }
