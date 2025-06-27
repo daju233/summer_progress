@@ -1,0 +1,154 @@
+body {
+    margin: 0;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+      'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+      sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    background-color: #ffe0f0; /* 粉嫩的背景色 */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    color: #d8437f; /* 粉色文字 */
+  }
+  
+  .App {
+    text-align: center;
+    background-color: #fff0f5; /* 浅粉色卡片背景 */
+    padding: 30px;
+    border-radius: 20px;
+    box-shadow: 0 10px 30px rgba(255, 192, 203, 0.5); /* 粉色阴影 */
+    width: 90%;
+    max-width: 600px;
+  }
+  
+  h1 {
+    color: #e91e63; /* 更深的粉色标题 */
+    margin-bottom: 25px;
+    font-size: 2.5em;
+    text-shadow: 1px 1px 2px rgba(255, 105, 180, 0.3);
+  }
+  
+  .progress-bar-container {
+    width: 100%;
+    background-color: #fce4ec; /* 进度条背景 */
+    border-radius: 15px;
+    overflow: hidden;
+    height: 40px; /* 容器高度 */
+    margin-bottom: 20px;
+    position: relative; /* 重要：为内部绝对定位元素提供参考 */
+    box-shadow: inset 0 2px 5px rgba(255, 192, 203, 0.3);
+  }
+  
+  .progress-bar-fill {
+    height: 100%; /* 填充高度100% */
+    background: linear-gradient(to right, #ff80ab, #e91e63); /* 粉色渐变填充 */
+    border-radius: 15px;
+    /* 移除 display: flex; align-items: center; justify-content: center; */
+    /* 因为文字不在它里面了，它只需要负责自己的宽度和背景 */
+    box-sizing: border-box;
+    transition: width 0.8s ease-in-out;
+  }
+  
+  /* 新增：百分比文字在整个进度条容器中居中 */
+  .percentage-text-centered {
+    position: absolute; /* 绝对定位 */
+    top: 50%; /* 距离顶部50% */
+    left: 50%; /* 距离左侧50% */
+    transform: translate(-50%, -50%); /* 精确居中 */
+    color: #000; /* 黑色文字 */
+    font-weight: bold;
+    font-size: 1.2em;
+    z-index: 1; /* 确保文字在进度条填充之上 */
+    /* 如果你的 percentage 类有其他颜色设置，可能还需要覆盖 */
+  }
+  
+  /* 如果 .percentage-text .percentage 已经设置了黑色，这里可以省略，但为了保险起见保留 */
+  .percentage-text-centered .percentage {
+    color: #000;
+  }
+  
+  /* 移除或修改旧的 .percentage-text 样式，因为它不再使用了 */
+  /* 或者简单地确保上面 .percentage-text-centered 的优先级更高 */
+  /* .percentage-text {
+    // 这段样式现在可以被移除或修改，因为它所作用的元素已经不在App.js的这个位置了
+    // 如果你确实有其他地方用到了，请酌情处理
+  } */
+  
+  
+  span { /* 这条规则可能会影响进度条外的其他span，请注意 */
+    color: #d8437f; /* 粉色总时间文字 */
+    font-size: 1.1em;
+    font-weight: 500;
+  }
+  
+  
+  /* 确保内部的 .percentage 也变为黑色，以防父级设置被覆盖 */
+  .percentage-text .percentage {
+    color: #000;
+  }
+  
+  span { /* 这条规则可能会影响进度条外的其他span，请注意 */
+    color: #d8437f; /* 粉色总时间文字 */
+    font-size: 1.1em;
+    font-weight: 500;
+  }
+  
+  /* 轮播图样式 - 确保淡入淡出能够正常工作 */
+  .carousel-container {
+    width: 100%;
+    height: 250px; /* 轮播图高度 */
+    overflow: hidden; /* 必须有，否则图片会超出 */
+    position: relative; /* 必须有，作为 img 绝对定位的参考 */
+    border-radius: 15px;
+    margin-top: 30px;
+    box-shadow: 0 5px 15px rgba(255, 192, 203, 0.4);
+  }
+  
+  .carousel-slide {
+    position: relative; /* 允许 img 绝对定位 */
+    width: 100%;
+    height: 100%;
+    /* 重要：这里不能有 display: flex; 或 transform 相关的样式，因为是淡入淡出 */
+  }
+  
+  .carousel-slide img {
+    position: absolute; /* 关键：图片绝对定位，叠加在一起 */
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 15px;
+    opacity: 0; /* 默认隐藏 */
+    transition: opacity 2s ease-in-out; /* 动画效果 */
+  }
+  
+  .carousel-slide img.active {
+    opacity: 1; /* 当前激活的图片显示 */
+  }
+  
+  .carousel-dots {
+    position: absolute;
+    bottom: 15px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    gap: 10px;
+    z-index: 10; /* 确保小圆点在图片上方可点击 */
+  }
+  
+  .carousel-dot {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background-color: rgba(255, 255, 255, 0.7);
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  .carousel-dot.active {
+    background-color: #e91e63;
+    transform: scale(1.2);
+  }
