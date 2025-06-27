@@ -50,6 +50,27 @@ body {
     box-sizing: border-box;
     transition: width 0.8s ease-in-out;
   }
+
+  .progress-bar-container-go {
+    width: 100%;
+    background-color: #fce4ec; /* 进度条背景 */
+    border-radius: 15px;
+    overflow: hidden;
+    height: 40px; /* 容器高度 */
+    margin-bottom: 20px;
+    position: relative; /* 重要：为内部绝对定位元素提供参考 */
+    box-shadow: inset 0 2px 5px rgba(255, 192, 203, 0.3);
+  }
+  
+  .progress-bar-fill-go {
+    height: 100%; /* 填充高度100% */
+    background: linear-gradient(to right, #80b3ff, #1e87e9); /* 粉色渐变填充 */
+    border-radius: 15px;
+    /* 移除 display: flex; align-items: center; justify-content: center; */
+    /* 因为文字不在它里面了，它只需要负责自己的宽度和背景 */
+    box-sizing: border-box;
+    transition: width 0.8s ease-in-out;
+  }
   
   /* 新增：百分比文字在整个进度条容器中居中 */
   .percentage-text-centered {
@@ -78,10 +99,16 @@ body {
   
   
   span { /* 这条规则可能会影响进度条外的其他span，请注意 */
-    color: #d8437f; /* 粉色总时间文字 */
+    color: #d84343; /* 粉色总时间文字 */
     font-size: 1.1em;
     font-weight: 500;
   }
+  .span-go { /* 这条规则可能会影响进度条外的其他span，请注意 */
+    color: #4377d8; /* 粉色总时间文字 */
+    font-size: 1.1em;
+    font-weight: 500;
+  }
+
   
   .date{
     display: block;

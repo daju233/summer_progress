@@ -12,6 +12,7 @@ function App() {
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
   const [totalTime, setTotalTime] = useState(0);
+  const [goTime, setGoTime] = useState(0);
   const [currentSlide, setCurrentSlide] = useState(0);
   const timeoutRef = useRef<NodeJS.Timeout | null>(null);
 
@@ -26,11 +27,13 @@ function App() {
         }
         const data = await response.json();
         const cppLanguage = data.data.languages.find((item: { name: string }) => item.name === 'C++');
+        const goLanguage = data.data.languages.find((item: { name: string }) => item.name === 'Go');
 
         let totalHoursValue = 0; // 使用一个临时变量来存储计算结果
+        let totalGoValue = 0;
         if (cppLanguage) {
-          console.log(cppLanguage);
           // 确保toFixed(2)后的字符串转换为数字
+          totalGoValue = parseFloat((goLanguage.hours - 46 + (goLanguage.minutes / 60)).toFixed(2));
           totalHoursValue = parseFloat((cppLanguage.hours - 59 + (cppLanguage.minutes / 60)).toFixed(2));
         } else {
           console.warn("C++ language data not found in API response.");
@@ -40,6 +43,7 @@ function App() {
         const calculatedPercentage = (totalHoursValue / targetHours) * 100;
 
         setTotalTime(totalHoursValue); // 设置为数字类型
+        setGoTime(totalGoValue);
         setPercentage(Math.min(100, Math.max(0, calculatedPercentage)));
       } catch (e: any) {
         setError(e.message);
@@ -92,8 +96,8 @@ function App() {
 
   return (
     <div className="App">
-      <h1>🍌🐺的CPP进度</h1>
-      <span className='date'>6.28-8-15</span>
+      <h1>🍌🐺的code进度</h1>
+      <span className='date'>6.28-8.28</span>
       <div className="progress-bar-container">
         <div
           className="progress-bar-fill"
@@ -101,10 +105,19 @@ function App() {
         >
         </div>
         <span className="percentage-text-centered">
-          <span className='percentage'>{Math.round(percentage)}%</span>
+        <span>C++ {totalTime}/180 h</span>
         </span>
       </div>
-      <span>{totalTime}h / 180h</span>
+      <div className="progress-bar-container-go">
+        <div
+          className="progress-bar-fill-go"
+          style={{ width: `${percentage}%` }}
+        >
+        </div>
+        <span className="percentage-text-centered">
+        <span className='span-go'>Go {goTime}/120 h</span>
+        </span>
+      </div>
 
       <div className="carousel-container">
         <div className="carousel-slide">
