@@ -93,6 +93,7 @@ function App() {
   return (
     <div className="App">
       <h1>🍌🐺的CPP进度</h1>
+      <span className='date'>6.28-8-15</span>
       <div className="progress-bar-container">
         <div
           className="progress-bar-fill"
@@ -103,7 +104,7 @@ function App() {
           <span className='percentage'>{Math.round(percentage)}%</span>
         </span>
       </div>
-      <span>{totalTime}h / 180h</span> {/* 确保空格 */}
+      <span>{totalTime}h / 180h</span>
 
       <div className="carousel-container">
         <div className="carousel-slide">

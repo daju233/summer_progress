@@ -83,6 +83,13 @@ body {
     font-weight: 500;
   }
   
+  .date{
+    display: block;
+    color: #000;
+    font-size: 1.2em;
+    font-weight: 1000;
+    margin-bottom: 20px;
+  }
   
   /* 确保内部的 .percentage 也变为黑色，以防父级设置被覆盖 */
   .percentage-text .percentage {
