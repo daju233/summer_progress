@@ -142,7 +142,7 @@ function App() {
       </div>
       <br />
       <script async src="//finicounter.eu.org/finicounter.js"></script>
-      <span>本站访问人数统计</span>
+      <span>本站访问人数统计  </span>
       <span id="finicount_views"></span>
     </div>
   );
