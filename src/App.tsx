@@ -9,6 +9,7 @@ const images = [
 
 function App() {
   const [percentage, setPercentage] = useState(0);
+  const [percentageGO, setPercentageGO] = useState(0);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
   const [totalTime, setTotalTime] = useState(0);
@@ -39,12 +40,15 @@ function App() {
           console.warn("C++ language data not found in API response.");
         }
 
-        const targetHours = 70;
+        const targetHours = 180;
+        const targetHoursGo = 70;
         const calculatedPercentage = (totalHoursValue / targetHours) * 100;
+        const calculatedPercentageGo = (totalHoursValue / targetHoursGo) * 100;
 
         setTotalTime(totalHoursValue); // 设置为数字类型
         setGoTime(totalGoValue);
         setPercentage(Math.min(100, Math.max(0, calculatedPercentage)));
+        setPercentageGO(Math.min(100, Math.max(0, calculatedPercentageGo)));
       } catch (e: any) {
         setError(e.message);
       } finally {
@@ -111,7 +115,7 @@ function App() {
       <div className="progress-bar-container-go">
         <div
           className="progress-bar-fill-go"
-          style={{ width: `${percentage}%` }}
+          style={{ width: `${percentageGO}%` }}
         >
         </div>
         <span className="percentage-text-centered">
