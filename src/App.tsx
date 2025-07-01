@@ -39,7 +39,7 @@ function App() {
           console.warn("C++ language data not found in API response.");
         }
 
-        const targetHours = 180;
+        const targetHours = 70;
         const calculatedPercentage = (totalHoursValue / targetHours) * 100;
 
         setTotalTime(totalHoursValue); // 设置为数字类型
@@ -115,7 +115,7 @@ function App() {
         >
         </div>
         <span className="percentage-text-centered">
-        <span className='span-go'>Go {goTime}/120 h</span>
+        <span className='span-go'>Go {goTime}/70 h</span>
         </span>
       </div>
       <div className="carousel-container">
