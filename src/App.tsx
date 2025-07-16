@@ -43,7 +43,7 @@ function App() {
         const targetHours = 180;
         const targetHoursGo = 70;
         const calculatedPercentage = (totalHoursValue / targetHours) * 100;
-        const calculatedPercentageGo = (totalHoursValue / targetHoursGo) * 100;
+        const calculatedPercentageGo = (totalGoValue / targetHoursGo) * 100;
 
         setTotalTime(totalHoursValue); // 设置为数字类型
         setGoTime(totalGoValue);
