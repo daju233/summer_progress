@@ -39,7 +39,7 @@ function App() {
           console.warn("C++ language data not found in API response.");
         }
 
-        const targetHours = 180;
+        const targetHours = 100;
         const targetHoursGo = 70;
         const calculatedPercentage = (totalHoursValue / targetHours) * 100;
         const calculatedPercentageGo = (totalGoValue / targetHoursGo) * 100;
@@ -108,7 +108,7 @@ function App() {
         >
         </div>
         <span className="percentage-text-centered">
-        <span>C++ {totalTime}/180 h</span>
+        <span>C++ {totalTime}/100 h</span>
         </span>
       </div>
       <div className="progress-bar-container-go">
