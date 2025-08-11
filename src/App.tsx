@@ -3,7 +3,7 @@ import './App.css';
 
 // 假设有一些图片用于轮播
 const images = [
-'https://xjtu.app/uploads/default/optimized/2X/9/94ab2b47f7baba39b422e736f073cf9da3453d61_2_690x386.jpeg'
+'https://i0.hdslb.com/bfs/new_dyn/00113ce3ede5477a946af2ec8ccbc751401626802.jpg'
 ];
 
 function App() {
