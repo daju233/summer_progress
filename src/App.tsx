@@ -3,7 +3,7 @@ import './App.css';
 
 // 假设有一些图片用于轮播
 const images = [
-'https://i0.hdslb.com/bfs/new_dyn/00113ce3ede5477a946af2ec8ccbc751401626802.jpg'
+'https://i0.hdslb.com/bfs/new_dyn/00113ce3ede5477a946af2ec8ccbc751401626802.jpg@1192w.avif'
 ];
 
 function App() {
