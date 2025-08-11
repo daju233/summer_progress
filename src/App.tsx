@@ -108,7 +108,7 @@ function App() {
         >
         </div>
         <span className="percentage-text-centered">
-        <span>C++ {totalTime}/100 h</span>
+        <span className='span-cpp'>C++ {totalTime}/100 h</span>
         </span>
       </div>
       <div className="progress-bar-container-go">

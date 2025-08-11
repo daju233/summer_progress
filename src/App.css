@@ -98,7 +98,7 @@ body {
   } */
   
   
-  span { /* 这条规则可能会影响进度条外的其他span，请注意 */
+  .span-cpp { /* 这条规则可能会影响进度条外的其他span，请注意 */
     color: #28b12e; /* 粉色总时间文字 */
     font-size: 1.1em;
     font-weight: 500;
