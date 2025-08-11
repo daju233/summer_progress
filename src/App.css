@@ -99,12 +99,12 @@ body {
   
   
   span { /* 这条规则可能会影响进度条外的其他span，请注意 */
-    color: #d84343; /* 粉色总时间文字 */
+    color: #ffeded; /* 粉色总时间文字 */
     font-size: 1.1em;
     font-weight: 500;
   }
   .span-go { /* 这条规则可能会影响进度条外的其他span，请注意 */
-    color: #4377d8; /* 粉色总时间文字 */
+    color: #a8badb; /* 粉色总时间文字 */
     font-size: 1.1em;
     font-weight: 500;
   }
